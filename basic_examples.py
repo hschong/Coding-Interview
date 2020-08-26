@@ -61,3 +61,15 @@ languages.extend(languages_tuple)
 
 for idx, val in enumerate(new_list):
     print(idx, val)
+
+
+# Lambda
+def calculate(a, b, func):
+    return func(a, b)
+
+
+# add = lambda a, b: a+b
+def add(a, b): return a+b
+
+# judge = lambda score: 'pass' if score>=80 else 'fail'
+def judge(score): return 'pass' if score >= 80 else 'fail'
