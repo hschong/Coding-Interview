@@ -1,9 +1,9 @@
 integers = [1, 2, 5, 4, 7, 3]
 characters = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
-# invalid_list = [a, b, c, d, e]
 string = 'apple#banana#cherry#orange'
-
+languages = ['Korean']
+languages_tuple = ('English', 'German')
 
 # Sort the items of the list in place.
 integers.sort()
@@ -55,6 +55,9 @@ new_list *= 0
 
 # new_list = new_list[:1] + new_list[1:]
 new_list[1:] = []
+
+occurrences = new_list.count('a')
+languages.extend(languages_tuple)
 
 for idx, val in enumerate(new_list):
     print(idx, val)
