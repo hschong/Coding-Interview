@@ -1,3 +1,10 @@
+import math
+
+# Using infinity
+# import math
+INFINITY = math.inf
+NEGATIVE_INFINITY = -math.inf
+
 integers = [1, 2, 5, 4, 7, 3]
 characters = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
