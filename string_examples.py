@@ -17,6 +17,6 @@ new_string = ''.join(new_list)
 new_name = name.replace('h', 'H')
 
 # Reverse string
-reversed_string = string[-1::-1]
-reversed_string = string[::-1]
-reversed_string = ''.join(list(reversed(list(string))))
+reverse_string = string[-1::-1]
+reverse_string = string[::-1]
+reverse_string = ''.join(list(reversed(list(string))))
