@@ -12,6 +12,11 @@ new_list = list(string)
 # Convert a list to a string.
 new_string = ''.join(new_list)
 
-# string object is immutable.
+# String object is immutable.
 # name[0] = 'H' wrong! using str.replace() instead of assignment.
 new_name = name.replace('h', 'H')
+
+# Reverse string
+reversed_string = string[-1::-1]
+reversed_string = string[::-1]
+reversed_string = ''.join(list(reversed(list(string))))
