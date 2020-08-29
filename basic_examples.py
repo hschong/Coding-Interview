@@ -26,6 +26,12 @@ for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
 
 
+sum_from_1_to_10 = 0
+sum_from_1_to_10 = sum(range(1, 11))
+for number in range(1, 10+1, 1):
+    sum_from_1_to_10 += number
+
+
 # Lambda
 def add(a, b): return a+b  # add = lambda a, b: a + b
 
