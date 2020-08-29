@@ -17,7 +17,6 @@ def reverse_list(lst):
 integers.reverse()
 reverse_integers = list(reversed(integers))  # returns reverse iterator.
 
-
 # Remove duplicates from list.
 non_duplicate = list(dict.fromkeys(duplicates))
 
@@ -48,3 +47,7 @@ characters[1:] = []
 
 occurrences = characters.count('a')
 languages.extend(languages_tuple)
+
+# Using List/Dictionary comprehension instead of map() or filter().
+lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
+dic = {key: value for key, value in enumerate(lst)}
