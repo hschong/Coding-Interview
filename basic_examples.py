@@ -7,6 +7,7 @@ NEGATIVE_INFINITY = -math.inf
 
 integers = [1, 2, 5, 4, 7, 3]
 characters = ['u', 'a', 'e', 'c', 'k', 'i']
+dictionary = {'a': 90, 'b': 80, 'c': 70, 'd': 60, 'f': 59}
 
 
 # Sort the items of the list in place.
@@ -21,6 +22,9 @@ sorted_characters = sorted(characters, reverse=True)
 # For loop
 for idx, val in enumerate(characters):
     print(idx, val)
+
+for key, val in dictionary.items():
+    print(key, val)
 
 for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
@@ -41,6 +45,7 @@ def calculate(a, b, func):
 
 
 calculate(3, 4, add)
+
 
 # judge = lambda score: 'pass' if score>=80 else 'fail'
 def judge(score): return 'pass' if score >= 80 else 'fail'
