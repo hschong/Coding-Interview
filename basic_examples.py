@@ -1,4 +1,5 @@
 import math
+import pprint
 
 # Using infinity
 # import math
@@ -51,7 +52,7 @@ calculate(3, 4, add)
 def judge(score): return 'pass' if score >= 80 else 'fail'
 
 
-# print
+# print usages.
 idx = 0
 fruit = 'apple'
 print('a', 'b', sep=', ')
@@ -60,3 +61,8 @@ print('bb')
 print('{0}: {1}'.format(idx, fruit))
 print('{}: {}'.format(idx, fruit))
 print(f'{idx}: {fruit}')  # 3.6+
+
+
+# Return a dictionary containing the current scope's local variables.
+# import pprint
+pprint.pprint(locals())
