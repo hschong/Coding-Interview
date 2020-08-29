@@ -1,5 +1,6 @@
 string = 'apple#banana#cherry#orange'
 name = 'heeseok'
+text = 'a fine day'
 
 
 # Split a string into lists.
@@ -20,3 +21,10 @@ new_name = name.replace('h', 'H')
 reverse_string = string[-1::-1]
 reverse_string = string[::-1]
 reverse_string = ''.join(list(reversed(list(string))))
+
+# Capital
+new_text = text.capitalize()
+new_text = text.title()
+new_text = new_text.swapcase()
+new_text = text.upper()
+new_text = text.lower()
