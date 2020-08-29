@@ -19,16 +19,20 @@ class Solution:
         if len(lst) <= 1:
             return True
         elif lst[0] == lst[-1]:
+            # copy overhead occurred like list.copy(), list() and [:]
             return self.is_palindrome(lst[1:-1])
         else:
             return False
 
-    def isPalindrome(self, S: str) -> bool:
-        return self.is_palindrome(self.remove_non_alphanumeric_characters(S))
 
+def isPalindrome(self, S: str) -> bool:
+    alphanumeric_characters = [char.lower() for char in S if char.isalnum()]
 
-sol = Solution()
-print(sol.isPalindrome(palindrome))
+    while len(alphanumeric_characters) > 1:
+        if alphanumeric_characters.pop(0) != alphanumeric_characters.pop():
+            return False
+
+    return True
 
 
 def is_palindrome(S: str) -> bool:
