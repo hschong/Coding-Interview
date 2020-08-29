@@ -4,16 +4,16 @@ non_palindrome_1 = 'abdcba'
 non_palindrome_2 = 'bbbba'
 
 
-def is_palindrome(string):
-    return True if string == string[::-1] else False
+def is_palindrome(S: str) -> bool:
+    return True if S == S[::-1] else False
 
 
-def is_palindrome_using_recursive(string):
-    if len(string) <= 1:
+def is_palindrome_using_recursive(S) -> bool:
+    if len(S) <= 1:
         return True
 
-    if string[0] == string[-1]:
-        return is_palindrome_using_recursive(string[1:-1])
+    if S[0] == S[-1]:
+        return is_palindrome_using_recursive(S[1:-1])
     else:
         return False
 
