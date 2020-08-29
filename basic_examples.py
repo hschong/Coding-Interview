@@ -49,3 +49,14 @@ calculate(3, 4, add)
 
 # judge = lambda score: 'pass' if score>=80 else 'fail'
 def judge(score): return 'pass' if score >= 80 else 'fail'
+
+
+# print
+idx = 0
+fruit = 'apple'
+print('a', 'b', sep=', ')
+print('aa', end=' ')
+print('bb')
+print('{0}: {1}'.format(idx, fruit))
+print('{}: {}'.format(idx, fruit))
+print(f'{idx}: {fruit}')  # 3.6+
