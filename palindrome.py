@@ -6,7 +6,7 @@ import collections
 palindrome = 'A man, a plan, a canal: Panama'
 
 
-def remove_non_alphanumeric_characters(S: str) -> str:
+def remove_non_alphanum_chars(S: str) -> str:
     return ''.join([char.lower() for char in S if char.isalnum()])
 
 
@@ -19,25 +19,24 @@ def is_palindrome(S: str) -> bool:
 class Solution:
     # Use List: pop([i]) -> O(n)
     def isPalindrome(self, S: str) -> bool:
-        alphanumeric_characters = [char.lower()
-                                   for char in S if char.isalnum()]
+        alphanum_chars = [char.lower() for char in S if char.isalnum()]
 
-        while len(alphanumeric_characters) > 1:
-            if alphanumeric_characters.pop(0) != alphanumeric_characters.pop():
+        while len(alphanum_chars) > 1:
+            if alphanum_chars.pop(0) != alphanum_chars.pop():
                 return False
 
         return True
 
     # Use deque: list-like container with fast appends and pops on either end. popleft() -> O(1)
     def is_palindrome_1(self, S: str) -> bool:
-        alphanumeric_characters: Deque = collections.deque()
+        alphanum_chars: Deque = collections.deque()
 
         for char in S:
             if char.isalnum():
-                alphanumeric_characters.append(char.lower())
+                alphanum_chars.append(char.lower())
 
-        while len(alphanumeric_characters) > 1:
-            if alphanumeric_characters.popleft() != alphanumeric_characters.pop():
+        while len(alphanum_chars) > 1:
+            if alphanum_chars.popleft() != alphanum_chars.pop():
                 return False
 
         return True

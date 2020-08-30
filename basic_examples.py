@@ -3,13 +3,11 @@ import pprint
 import copy
 
 # Using infinity
-# import math
 INFINITY = math.inf
 NEGATIVE_INFINITY = -math.inf
 
 integers = [1, 2, 5, 4, 7, 3]
 characters = ['u', 'a', 'e', 'c', 'k', 'i']
-dictionary = {'a': 90, 'b': 80, 'c': 70, 'd': 60, 'f': 59}
 
 
 # Sort the items of the list in place.
@@ -25,17 +23,10 @@ sorted_characters = sorted(characters, reverse=True)
 for idx, val in enumerate(characters):
     print(idx, val)
 
-for key, val in dictionary.items():
-    print(key, val)
-
 for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
 
-
-sum_from_1_to_10 = 0
 sum_from_1_to_10 = sum(range(1, 11))
-for number in range(1, 10+1, 1):
-    sum_from_1_to_10 += number
 
 
 # Lambda
@@ -53,7 +44,7 @@ calculate(3, 4, add)
 def judge(score): return 'pass' if score >= 80 else 'fail'
 
 
-# print usages.
+# print() usages.
 idx = 0
 fruit = 'apple'
 print('a', 'b', sep=', ')
