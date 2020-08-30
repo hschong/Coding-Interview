@@ -6,18 +6,6 @@ import copy
 INFINITY = math.inf
 NEGATIVE_INFINITY = -math.inf
 
-integers = [1, 2, 5, 4, 7, 3]
-characters = ['u', 'a', 'e', 'c', 'k', 'i']
-
-
-# Sort the items of the list in place.
-integers.sort()
-integers.sort(reverse=True)
-
-# Return a new sorted list from the items in iterable.
-sorted_characters = sorted(characters)
-sorted_characters = sorted(characters, reverse=True)
-
 
 # For loop
 for idx, val in enumerate(characters):

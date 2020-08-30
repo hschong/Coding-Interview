@@ -1,10 +1,18 @@
 integers = [1, 2, 5, 4, 7, 3]
-characters = ['u', 'a', 'e', 'c', 'k', 'i']
+chars = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
-languages = ['Korean']
-languages_tuple = ('English', 'German')
+lang = ['Korean']
+lang_tuple = ('English', 'German')
 
+# Sort the items of the list in place.
+integers.sort()
+integers.sort(reverse=True)
 
+# Return a new sorted list from the items in iterable.
+sorted_chars = sorted(chars)
+sorted_chars = sorted(chars, reverse=True)
+
+# Reverse list.
 integers.reverse()
 reverse_integers = list(reversed(integers))  # returns reverse iterator.
 
@@ -21,23 +29,23 @@ item_at_1 = integers.pop(1)
 integers.remove(1)  # remove first occurrence of value.
 
 # Return first index of value from list.
-if 'a' not in characters:
+if 'a' not in chars:
     print("'a' is not in character")
 else:
-    index = characters.index('a')
+    index = chars.index('a')
 
 # Remove all items from list.
-characters.clear()
-del characters[:]
-characters = []
-characters[:] = []
-characters *= 0
+chars.clear()
+del chars[:]
+chars = []
+chars[:] = []
+chars *= 0
 
-# characters == characters[:1] + characters[1:]
-characters[1:] = []
+# chars == chars[:1] + chars[1:]
+chars[1:] = []
 
-occurrences = characters.count('a')
-languages.extend(languages_tuple)
+occurrences = chars.count('a')
+lang.extend(lang_tuple)
 
 # Using List/Dictionary comprehension instead of map() or filter().
 lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
