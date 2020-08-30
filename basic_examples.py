@@ -8,7 +8,8 @@ NEGATIVE_INFINITY = -math.inf
 
 
 # For loop
-for idx, val in enumerate(characters):
+chars = ['u', 'a', 'e', 'c', 'k', 'i']
+for idx, val in enumerate(chars):
     print(idx, val)
 
 for countdown in 5, 4, 3, 2, 1, 'hey!':
