@@ -11,45 +11,23 @@ non_palindrome_2 = 'bbbba'
 test_sample = palindrome
 
 
-class Solution:
-    def remove_non_alphanumeric_characters(self, S: str) -> List:
-        return [char.lower() for char in S if char.isalnum()]
-
-    def is_palindrome(self, lst: List) -> bool:
-        if len(lst) <= 1:
-            return True
-        elif lst[0] == lst[-1]:
-            # copy overhead occurred like list.copy(), list() and [:]
-            return self.is_palindrome(lst[1:-1])
-        else:
-            return False
-
-
-def isPalindrome(self, S: str) -> bool:
-    alphanumeric_characters = [char.lower() for char in S if char.isalnum()]
-
-    while len(alphanumeric_characters) > 1:
-        if alphanumeric_characters.pop(0) != alphanumeric_characters.pop():
-            return False
-
-    return True
+def remove_non_alphanumeric_characters(S: str) -> str:
+    return ''.join([char.lower() for char in S if char.isalnum()])
 
 
 def is_palindrome(S: str) -> bool:
     return True if S == S[::-1] else False
+    # Do not use recursive call using list slicing because
+    # copycopy overhead occurred like list.copy(), list() and [:]
 
 
-def is_palindrome_using_recursive(S) -> bool:
-    if len(S) <= 1:
+class Solution:
+    def isPalindrome(self, S: str) -> bool:
+        alphanumeric_characters = [char.lower()
+                                   for char in S if char.isalnum()]
+
+        while len(alphanumeric_characters) > 1:
+            if alphanumeric_characters.pop(0) != alphanumeric_characters.pop():
+                return False
+
         return True
-
-    if S[0] == S[-1]:
-        return is_palindrome_using_recursive(S[1:-1])
-    else:
-        return False
-
-
-print(is_palindrome(palindrome_2))
-print(is_palindrome(non_palindrome_1))
-print(is_palindrome_using_recursive(palindrome_2))
-print(is_palindrome_using_recursive(non_palindrome_1))
