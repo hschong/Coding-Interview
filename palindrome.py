@@ -13,7 +13,7 @@ def remove_non_alphanumeric_characters(S: str) -> str:
 def is_palindrome(S: str) -> bool:
     return True if S == S[::-1] else False
     # Do not use recursive call using list slicing because
-    # copycopy overhead occurred like list.copy(), list() and [:]
+    # copy overhead occurred like list.copy(), list() and [:]
 
 
 class Solution:
