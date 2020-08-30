@@ -5,15 +5,6 @@ languages = ['Korean']
 languages_tuple = ('English', 'German')
 
 
-# Reverse list.
-def reverse_list(lst):
-    if len(lst) >= 2:
-        lst[0], lst[-1] = lst[-1], lst[0]
-        return list(lst[0]) + reverse_list(lst[1:-1]) + list(lst[-1])
-    else:
-        return lst
-
-
 integers.reverse()
 reverse_integers = list(reversed(integers))  # returns reverse iterator.
 
