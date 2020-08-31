@@ -11,6 +11,8 @@ integers.sort(reverse=True)
 # Return a new sorted list from the items in iterable.
 sorted_chars = sorted(chars)
 sorted_chars = sorted(chars, reverse=True)
+sorted("This is a test string from Andrew".split(), key=str.lower)
+# ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
 
 # Reverse list.
 integers.reverse()

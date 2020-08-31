@@ -6,6 +6,9 @@ text = 'a fine day'
 # Split a string into lists.
 # Setting the maxsplit parameter to 3, will return a list with 4.
 new_list = string.split('#', 3)
+# the default means split according to any white space, and discard empty strings from the result.
+new_list = string.split()
+
 
 # Convert a string to a list.
 new_list = list(string)
