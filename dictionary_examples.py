@@ -18,6 +18,10 @@ sorted(dic.items(), reverse=True)
 
 
 # Counter object
-lst = [1, 2, 3, 4, 5, 5, 6, 6, 5]
+lst = ['a', 'b', 'c', 'd', 'e', 'e', 'f', 'f', 'e']
+txt = 'abcdeabcdabcaba'
+
+collections.Counter(txt)
+# Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
 count_dic = collections.Counter(lst)
-# Counter({5: 3, 6: 2, 1: 1, 2: 1, 3: 1, 4: 1})
+# Counter({'e': 3, 'f': 2, 'a': 1, 'b': 1, 'c': 1, 'd': 1})
