@@ -34,9 +34,8 @@ class Solution:
         # 2. count
         anagrams_dic = collections.defaultdict(list)
         for word in strs:
-            # defaultdict.append() -> append the value into list of values
+            # defaultdict[key].append(value) -> append value into list of values of key
             anagrams_dic[''.join(sorted(word))].append(word)
-            # anagrams_dic[''.join(sorted(word))] = word -> assign the value to the value of the key
 
         return anagrams_dic.values()
 

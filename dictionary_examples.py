@@ -12,6 +12,7 @@ for key, val in dic.items():
 lst = [('white', 1), ('blue', 2), ('white', 3), ('blue', 4), ('red', 1)]
 dic = collections.defaultdict(list)
 for k, v in lst:
+    # When keys are encountered again, the look-up proceeds normally (returning the list for that key) and the list.append() operation adds another value to the list.
     dic[k].append(v)
 
 sorted(dic.items(), reverse=True)
