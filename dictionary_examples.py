@@ -19,9 +19,11 @@ sorted(dic.items(), reverse=True)
 
 # Counter object
 lst = ['a', 'b', 'c', 'd', 'e', 'e', 'f', 'f', 'e']
-txt = 'abcdeabcdabcaba'
+string = 'abcdeabcdabcaba'
 
-collections.Counter(txt)
+most_common_lst = collections.Counter(string).most_common(2)
+# print(count_dic)
 # Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
 count_dic = collections.Counter(lst)
+# print(lst)
 # Counter({'e': 3, 'f': 2, 'a': 1, 'b': 1, 'c': 1, 'd': 1})
