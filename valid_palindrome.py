@@ -1,7 +1,9 @@
 # 125. Valid palindrome
 # https://leetcode.com/problems/valid-palindrome/#
 
-import collections
+from collections import deque
+from typing import Deque
+
 
 palindrome = 'A man, a plan, a canal: Panama'
 
@@ -29,7 +31,7 @@ class Solution:
 
     # Use deque: list-like container with fast appends and pops on either end. popleft() -> O(1)
     def is_palindrome_1(self, S: str) -> bool:
-        alphanum_chars: Deque = collections.deque()
+        alphanum_chars: Deque = deque()
 
         for char in S:
             if char.isalnum():
