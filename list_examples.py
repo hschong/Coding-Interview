@@ -1,12 +1,14 @@
 integers = [1, 2, 5, 4, 7, 3]
 chars = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
-lang = ['Korean']
+lang = ['Korean', 'Japanese', 'Chinese', 'Spanish']
 lang_tuple = ('English', 'German')
 
 # Sort the items of the list in place.
 integers.sort()
 integers.sort(reverse=True)
+lang.sort(key=len)
+lang.sort(key=lambda lang: (lang[0], lang[-1]))  # ordering: lang[0] -> lang[1]
 
 # Return a new sorted list from the items in iterable.
 sorted_chars = sorted(chars)
