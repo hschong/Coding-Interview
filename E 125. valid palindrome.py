@@ -1,6 +1,8 @@
 # 125. Valid palindrome
 # https://leetcode.com/problems/valid-palindrome/#
 
+# Easy
+
 from collections import deque
 from typing import Deque
 

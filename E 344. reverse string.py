@@ -1,6 +1,8 @@
 # 344. Reverse String
 # https://leetcode.com/problems/reverse-string/
 
+# Easy
+
 from typing import List
 
 
