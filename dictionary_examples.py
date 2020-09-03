@@ -15,6 +15,9 @@ for k, v in lst:
     # When keys are encountered again, the look-up proceeds normally (returning the list for that key) and the list.append() operation adds another value to the list.
     dic[k].append(v)
 
+if 'white' in dic:
+    print("key in dict")
+
 sorted(dic.items(), reverse=True)
 
 
