@@ -37,8 +37,8 @@ def longest_palindrome(s: str) -> list:
 
     def get_max_key(dic: DefaultDict) -> int:
         max_key = 0
-        for k, v in dic.items():
-            max_key = max(max_key, k)
+        for item in dic.items():
+            max_key = max(max_key, item[0])
 
         return max_key
 
