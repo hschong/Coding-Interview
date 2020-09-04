@@ -1,6 +1,9 @@
 # 234. Palindrome Linked List
 # https://leetcode.com/problems/palindrome-linked-list/
 
+# import collections
+import collections
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -10,40 +13,43 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        # 1. covert ListNode to list
-        # 2. compare the list with the reverse list
+        # 1. make a deque
+        # 2. add nodes to the deque
+        # 2. compare the deque.popleft() with the deque.pop()
 
-        lst = []
-        reverse_lst = []
+        dq = collections.deque()
         node = head
 
         if not head:
             return True
 
-        while node != None:
-            lst.append(node.val)
+        while node is not None:
+            dq.append(node.val)
             node = node.next
 
-        reverse_lst = list(reversed(lst))
-        if lst != reverse_lst:
-            return False
+        while len(dq) > 1:
+            if dq.popleft() != dq.pop():
+                return False
 
         return True
 
 
 def is_palindrome(head: ListNode) -> bool:
+    # 1. covert ListNode to list
+    # 2. compare the list with the reverse list
+
     lst = []
     node = head
     idx = 0
 
-    while node != None:
+    while node is not None:
         lst.append(node.val)
         node = node.next
 
     lst.reverse()
     node = head
 
-    while node != None:
+    while node is not None:
         if node.val != lst[idx]:
             return False
 
