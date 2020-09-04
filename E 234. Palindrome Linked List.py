@@ -25,9 +25,29 @@ class Solution:
             node = node.next
 
         reverse_lst = list(reversed(lst))
-        while len(lst) > 1:
-            # pop(0): O(n), pop(): O(1)
-            if lst.pop() != reverse_lst.pop():
-                return False
+        if lst != reverse_lst:
+            return False
 
         return True
+
+
+def is_palindrome(head: ListNode) -> bool:
+    lst = []
+    node = head
+    idx = 0
+
+    while node != None:
+        lst.append(node.val)
+        node = node.next
+
+    lst.reverse()
+    node = head
+
+    while node != None:
+        if node.val != lst[idx]:
+            return False
+
+        idx += 1
+        node = node.next
+
+    return True
