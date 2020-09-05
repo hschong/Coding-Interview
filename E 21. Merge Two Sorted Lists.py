@@ -40,3 +40,21 @@ class Solution:
                 cur = node
 
         return head
+
+
+def merge_two_lists(l1: ListNode, l2: ListNode) -> ListNode:
+    # small number is always assigned to l1.
+    # swap the lists
+    if l1 is None:
+        l1, l2 = l2, l1
+
+    if l2 is None:
+        return l1
+
+    if l1.val > l2.val:
+        l1, l2 = l2, l1
+
+    if l1:
+        l1.next = merge_two_lists(l1.next, l2)
+
+    return l1
