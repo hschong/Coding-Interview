@@ -36,3 +36,15 @@ class Solution:
             cur_node = next_node
 
         return prev_node
+
+    def reverse_list(self, head: ListNode) -> ListNode:
+        def reverse(cur_node: ListNode, prev_node: ListNode = None) -> ListNode:
+            if not cur_node:
+                return prev_node
+
+            next_node = cur_node.next
+            cur_node.next = prev_node
+
+            return reverse(next_node, cur_node)
+
+        return reverse(head)
