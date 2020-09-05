@@ -20,24 +20,19 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        dq: Deque[int] = deque()
+        if not head:
+            return head
+
         cur_node = head
+        prev_node = next_node = None
 
-        while cur_node is not None:
-            dq.append(cur_node.val)
-            cur_node = cur_node.next
+        while cur_node:
+            # prev_node <---O--- cur_node.next ---X--> next_node
+            next_node = cur_node.next
+            cur_node.next = prev_node
 
-        result = cur_node = None
-        while len(dq) != 0:
-            new_node = ListNode()
-            new_node.val = dq.pop()
+            # move forward
+            prev_node = cur_node
+            cur_node = next_node
 
-            if cur_node is None:
-                result = cur_node = new_node
-            else:
-                # cur_node is equal to prev_node.
-                cur_node.next = new_node
-                # update cur_node
-                cur_node = new_node
-
-        return result
+        return prev_node
