@@ -11,55 +11,71 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        def get_carryover(temp_sum: int) -> int:
-            if temp_sum > 9:
-                return 1
-            else:
-                return 0
+        prev_carry, cur_carry = 0, 0
+        head, prev_node = None, None
 
-        def get_sum(l1: ListNode, l2: ListNode) -> int:
-            if l1 is not None and l2 is not None:
-                temp_sum = l1.val + l2.val
-            elif l1 is None:
-                temp_sum = l2.val
-            elif l2 is None:
-                temp_sum = l1.val
+        while l1 or l2 or prev_carry:
+            sum = 0
 
-            return temp_sum
+            if l1:
+                sum += l1.val
+                l1 = l1.next
 
-        prev_carryover, new_carryover = 0, 0
-        temp_l1, temp_l2 = l1, l2
-        reverse_head = prev_node = None
+            if l2:
+                sum += l2.val
+                l2 = l2.next
 
-        while temp_l1 is not None or temp_l2 is not None:
-            new_node = ListNode()
+            cur_carry, val = divmod(sum + prev_carry, 10)
+            new_node = ListNode(val)
 
-            if prev_node is None:
-                reverse_head = new_node
+            if head is None:
+                head = new_node
             else:
                 prev_node.next = new_node
 
-            temp_sum = get_sum(temp_l1, temp_l2)
-            if prev_carryover == 1:
-                temp_sum += 1
-
-            new_carryover = get_carryover(temp_sum)
-            if new_carryover == 0:
-                new_node.val = temp_sum
-            elif new_carryover == 1:
-                new_node.val = temp_sum - 10
-
-            # move forward
             prev_node = new_node
-            if temp_l1 is not None:
-                temp_l1 = temp_l1.next
-            if temp_l2 is not None:
-                temp_l2 = temp_l2.next
-            prev_carryover = new_carryover
+            prev_carry = cur_carry
 
-        if prev_carryover == 1:
-            new_node = ListNode()
-            new_node.val = 1
-            prev_node.next = new_node
+        return head
 
-        return reverse_head
+    def add_two_umbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        num1_lst = []
+        num2_lst = []
+        prev_node = head = None
+
+        # 1. convert ListNode to list
+        while l1 or l2:
+            if l1:
+                num1_lst.append(str(l1.val))
+                l1 = l1.next
+
+            if l2:
+                num2_lst.append(str(l2.val))
+                l2 = l2.next
+
+        # 2. reverse the list
+        num1_lst.reverse()
+        num2_lst.reverse()
+
+        # 3. convert the list to string
+        # 4. convert the string to integer
+        # 5. add two integers
+        sum = int(''.join(num1_lst)) + int(''.join(num2_lst))
+
+        # 6. convert the sum to a string
+        # 7. reverse the string
+        sum_str = str(sum)[::-1]
+
+        # 8. make a new ListNode
+        for i in range(len(sum_str)):
+            new_node = ListNode(int(sum_str[i]))
+
+            if head is None:
+                head = new_node
+
+            if prev_node is not None:
+                prev_node.next = new_node
+
+            prev_node = new_node
+
+        return head
