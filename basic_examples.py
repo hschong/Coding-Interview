@@ -1,6 +1,7 @@
 import math
 import pprint
 import copy
+import collections
 
 # Using infinity
 INFINITY = math.inf
@@ -8,9 +9,21 @@ NEGATIVE_INFINITY = -math.inf
 
 
 # For loop
+string = "abcdef"
 chars = ['u', 'a', 'e', 'c', 'k', 'i']
-for idx, val in enumerate(chars):
+dic = collections.defaultdict(int)
+dic['A'] = 90
+dic['B'] = 80
+dic['C'] = 1
+
+for char in string:  # str
+    print(char)
+
+for idx, val in enumerate(chars):  # list
     print(idx, val)
+
+for key, val in dic.items():  # dict
+    print(key, val)
 
 for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
