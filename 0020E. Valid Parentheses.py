@@ -21,7 +21,7 @@ class Solution:
                 return False
 
         if not my_stack:  # len(my_stack) == 0
-            return False
+            return True
 
 
 sol = Solution()
