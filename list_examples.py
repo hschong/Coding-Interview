@@ -1,10 +1,12 @@
 import functools
+import copy
 
 integers = [1, 2, 5, 4, 7, 3]
 chars = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
 lang = ['Korean', 'Japanese', 'Chinese', 'Spanish']
 lang_tuple = ('English', 'German')
+
 
 # Sort the items of the list in place.
 integers.sort()
@@ -18,36 +20,25 @@ sorted_chars = sorted(chars, reverse=True)
 sorted("This is a test string from Andrew".split(), key=str.lower)
 # ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
 
+
 # Reverse list.
 integers.reverse()
 reverse_integers = list(reversed(integers))  # returns reverse iterator.
 
-# Remove duplicates from list.
-non_duplicate = list(dict.fromkeys(duplicates))
 
-# list.append(x)
+# list.append(obj)
 chars.append('1')
-# list.insert(i, x)
+# list.insert(idx, obj)
 chars.insert(100, '2')
 chars.insert(100, '1')
 chars.insert(100, '2')
 
-# list.index(x[, start[, end]])
-# Raises a ValueError if there is no such item.
-# a function such as str.find() is not supported in list.
-index = chars.index('2', 7, -1)
-# index = chars.index('2', 8, -1) # ValueError occurred
 
 # Remove and return item at index (default last).
 last_item = integers.pop()
 item_at_1 = integers.pop(1)
 integers.remove(1)  # remove first occurrence of value.
 
-# Return first index of value from list.
-if 'a' not in chars:
-    print("'a' is not in character")
-else:
-    index = chars.index('a')
 
 # Remove all items from list.
 chars.clear()
@@ -59,8 +50,18 @@ chars *= 0
 # chars == chars[:1] + chars[1:]
 chars[1:] = []
 
-occurrences = chars.count('a')
-lang.extend(lang_tuple)
+
+# list.index(item[, start[, end]])
+# Raises a ValueError if there is no such item.
+# a function such as str.find() is not supported in list.
+index = chars.index('2', 7, -1)
+# index = chars.index('2', 8, -1) # ValueError occurred
+
+# Return first index of value from list.
+if 'a' not in chars:
+    print("'a' is not in character")
+else:
+    index = chars.index('a')
 
 
 # Using map() to convert float numbers to int numbers
@@ -74,14 +75,15 @@ lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
 dic = {key: value for key, value in enumerate(lst)}
 
 
+# filter()
 def f(x: int):
     return True if x > 1 and x < 5 else False
 
 
-# filter()
 list(filter(f, integers))  # [3, 4]
 list(filter(lambda num: num > 1 and num < 5, integers))  # [3, 4]
 [num for num in integers if num > 1 and num < 5]  # [3, 4]
+
 
 # functools.reduce()
 # using reduce to compute sum of list
@@ -92,3 +94,30 @@ functools.reduce(lambda prev, cur: prev if prev > cur else cur, integers)
 
 # append cur string to prev string
 functools.reduce(lambda prev, cur: prev + cur, lang)
+
+
+# Differences between 'is' and  '=='
+# Return a shallow copy of the list.
+lst_a = [1, 2, 3]
+lst_b = lst_a[:]  # lst_a.copy(), list([1, 2, 3])
+
+if lst_a is lst_b:  # 'is' compares id(lst_a) with id(lst_b).
+    print('same id')
+
+if lst_a == lst_b:  # '==' compares value of 'lst_a' with value of 'lst_b'.
+    print('same value')
+
+# mutalbe object(list) in mutable object(list)
+lst_c = [[1, 2, 3], 'a', 'b', 'c']
+lst_d = lst_c[:]
+lst_e = copy.deepcopy(lst_c)
+lst_c[0].append(4)
+# lst_d == [[1, 2, 3, 4], 'a', 'b', 'c']
+# lst_e == [[1, 2, 3], 'a', 'b', 'c']
+
+
+# Remove duplicates from list.
+non_duplicate = list(dict.fromkeys(duplicates))
+
+occurrences = chars.count('a')
+lang.extend(lang_tuple)

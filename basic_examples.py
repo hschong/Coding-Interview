@@ -1,6 +1,5 @@
 import math
 import pprint
-import copy
 import collections
 
 # Using infinity
@@ -62,29 +61,8 @@ print(f'{idx}: {fruit}')  # 3.6+
 pprint.pprint(locals())
 
 
-# Differences between 'is' and  '=='
-# Return a shallow copy of the list.
-lst_a = [1, 2, 3]
-lst_b = lst_a[:]  # lst_a.copy(), list(lst_a)
-
-if lst_a is lst_b:  # 'is' compares id(lst_a) with id(lst_b).
-    print('same id')
-
-if lst_a == lst_b:  # '==' compares value of 'lst_a' with value of 'lst_b'.
-    print('same value')
-
-# mutalbe object(list) in mutable object(list)
-lst_c = [[1, 2, 3], 'a', 'b', 'c']
-lst_d = lst_c[:]
-lst_e = copy.deepcopy(lst_c)
-lst_c[0].append(4)
-
-# lst_d == [[1, 2, 3, 4], 'a', 'b', 'c']
-# lst_e == [[1, 2, 3], 'a', 'b', 'c']
-
-
-# Storage class  https://www.geeksforgeeks.org/storage-classes-in-c-with-examples/
-
+# Storage class
+# https://www.geeksforgeeks.org/storage-classes-in-c-with-examples/
 def manipulate_global_variable_in_func():
     global x
     x = 11
