@@ -31,3 +31,15 @@ new_text = text.title()
 new_text = new_text.swapcase()
 new_text = text.upper()
 new_text = text.lower()
+
+
+# Strip
+strip_sample = "    ,[strip sample],    "
+strip_sample.lstrip()
+strip_sample.rstrip()
+strip_sample.strip()
+
+strip_sample_1 = ",[strip sample],"
+strip_sample_1.lstrip(',')
+strip_sample_1.rstrip(',')
+strip_sample_1.strip(',')
