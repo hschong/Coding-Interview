@@ -16,9 +16,20 @@ new_list = list(string)
 # Convert a list to a string.
 new_string = ''.join(new_list)
 
+# Find
+integers = "123456789012345"
+index = integers.find('1')  # return the first index of 'pl'.
+index = integers.find('11')  # returns -1.
+
+# Index
+# Like find(), but raise ValueError when the substring is not found.
+index = integers.index('1')
+# index = integers.index('11')  # ValueError
+
 # String object is immutable.
 # name[0] = 'H' wrong! using str.replace() instead of assignment.
 new_name = name.replace('h', 'H')
+
 
 # Reverse string
 reverse_string = string[-1::-1]
@@ -31,7 +42,6 @@ new_text = text.title()
 new_text = new_text.swapcase()
 new_text = text.upper()
 new_text = text.lower()
-
 
 # Strip
 strip_sample = "    ,[strip sample],    "
