@@ -23,9 +23,17 @@ reverse_integers = list(reversed(integers))  # returns reverse iterator.
 # Remove duplicates from list.
 non_duplicate = list(dict.fromkeys(duplicates))
 
-# Append/Insert an object in a list.
-integers.append(1)
-integers.insert(0, 1)
+# list.append(x)
+chars.append('1')
+# list.insert(i, x)
+chars.insert(100, '2')
+chars.insert(100, '1')
+chars.insert(100, '2')
+
+# list.index(x[, start[, end]])
+# Raises a ValueError if there is no such item.
+# a function such as str.find() is not supported in list.
+index = chars.index('2', 8, -1)
 
 # Remove and return item at index (default last).
 last_item = integers.pop()
