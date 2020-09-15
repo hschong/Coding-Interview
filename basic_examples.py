@@ -85,3 +85,42 @@ print("golbal x = ", x)
 manipulate_global_variable_in_func()
 print("after manipulate_global_variable_in_func() = ", x)
 func()
+
+
+# Closure
+def calc():
+    a, b = 3, 5
+
+    def mul_add(x):
+        return a * x + b
+
+    return mul_add
+
+
+def calc_total():
+    a, b, total = 3, 5, 0
+
+    def mul_add(x):
+        nonlocal total
+        total = a * x + b
+        print(total)
+
+    return mul_add
+
+
+def calc_using_lambda():
+    a, b = 3, 5
+    return lambda x: a * x + b
+
+
+c = calc()
+for i in range(1, 11):
+    print(c(i))
+
+c_t = calc_total()
+for i in range(1, 11):
+    c_t(i)
+
+c_l = calc_using_lambda()
+for i in range(1, 11):
+    print(c_l(i))
