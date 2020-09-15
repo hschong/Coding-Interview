@@ -54,3 +54,12 @@ lang.extend(lang_tuple)
 # Using List/Dictionary comprehension instead of map() or filter().
 lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
 dic = {key: value for key, value in enumerate(lst)}
+
+# Using map() to convert float numbers to int numbers
+float_nums = [1.2, 2.5, 3.1, 4.0, 5.00]
+int_nums = list(map(int, float_nums))
+int_nums_1 = [int(num) for num in float_nums]
+
+print(float_nums)
+print(int_nums)
+print(int_nums_1)
