@@ -1,3 +1,5 @@
+import functools
+
 integers = [1, 2, 5, 4, 7, 3]
 chars = ['u', 'a', 'e', 'c', 'k', 'i']
 duplicates = ['a', 'b', 'a', 'c', 'c']
@@ -60,19 +62,16 @@ chars[1:] = []
 occurrences = chars.count('a')
 lang.extend(lang_tuple)
 
-# Using List/Dictionary comprehension instead of map() or filter().
-lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
-dic = {key: value for key, value in enumerate(lst)}
 
 # Using map() to convert float numbers to int numbers
 float_nums = [1.2, 2.5, 3.1, 4.0, 5.00]
 int_nums = list(map(int, float_nums))
+int_nums = list(map(lambda num: int(num), float_nums))
 int_nums_1 = [int(num) for num in float_nums]
 
-
-print(float_nums)
-print(int_nums)
-print(int_nums_1)
+# Using List/Dictionary comprehension instead of map() or filter().
+lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
+dic = {key: value for key, value in enumerate(lst)}
 
 
 def f(x: int):
@@ -80,4 +79,16 @@ def f(x: int):
 
 
 # filter()
-list(filter(f, integers)  # [3, 4]
+list(filter(f, integers))  # [3, 4]
+list(filter(lambda num: num > 1 and num < 5, integers))  # [3, 4]
+[num for num in integers if num > 1 and num < 5]  # [3, 4]
+
+# functools.reduce()
+# using reduce to compute sum of list
+functools.reduce(lambda prev, cur: prev + cur, integers)
+
+# using reduce to compute maximum element from list
+functools.reduce(lambda prev, cur: prev if prev > cur else cur, integers)
+
+# append cur string to prev string
+functools.reduce(lambda prev, cur: prev + cur, lang)
