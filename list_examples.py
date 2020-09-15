@@ -33,7 +33,8 @@ chars.insert(100, '2')
 # list.index(x[, start[, end]])
 # Raises a ValueError if there is no such item.
 # a function such as str.find() is not supported in list.
-index = chars.index('2', 8, -1)
+index = chars.index('2', 7, -1)
+# index = chars.index('2', 8, -1) # ValueError occurred
 
 # Remove and return item at index (default last).
 last_item = integers.pop()
@@ -68,6 +69,15 @@ float_nums = [1.2, 2.5, 3.1, 4.0, 5.00]
 int_nums = list(map(int, float_nums))
 int_nums_1 = [int(num) for num in float_nums]
 
+
 print(float_nums)
 print(int_nums)
 print(int_nums_1)
+
+
+def f(x: int):
+    return True if x > 1 and x < 5 else False
+
+
+# filter()
+list(filter(f, integers)  # [3, 4]
