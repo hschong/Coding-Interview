@@ -16,12 +16,14 @@ new_list = list(string)
 # Convert a list to a string.
 new_string = ''.join(new_list)
 
-# Find
+# str.find(sub[, start[, end]])
+# Return the lowest index in the string where substring sub is found.
 integers = "123456789012345"
 index = integers.find('1')  # return the first index of 'pl'.
 index = integers.find('11')  # returns -1.
+index = integers.rfind('5')  # returns 14.
 
-# Index
+# str.index(sub[, start[, end]])
 # Like find(), but raise ValueError when the substring is not found.
 index = integers.index('1')
 # index = integers.index('11')  # ValueError
