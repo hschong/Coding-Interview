@@ -103,7 +103,7 @@ def calc_total():
     def mul_add(x):
         nonlocal total
         total = a * x + b
-        print(total)
+        print(total, end=' ')
 
     return mul_add
 
@@ -114,13 +114,19 @@ def calc_using_lambda():
 
 
 c = calc()
+print("closure:", end=' ')
 for i in range(1, 11):
-    print(c(i))
+    print(c(i), end=' ')
+print()
 
 c_t = calc_total()
+print("closure total:", end=' ')
 for i in range(1, 11):
     c_t(i)
+print()
 
 c_l = calc_using_lambda()
+print("closure lambda:", end=' ')
 for i in range(1, 11):
-    print(c_l(i))
+    print(c_l(i), end=' ')
+print()
