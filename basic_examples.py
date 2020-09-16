@@ -31,21 +31,6 @@ for countdown in 5, 4, 3, 2, 1, 'hey!':
 sum_from_1_to_10 = sum(range(1, 11))
 
 
-# Lambda
-def add(a, b): return a+b  # add = lambda a, b: a + b
-
-
-def calculate(a, b, func):
-    return func(a, b)
-
-
-calculate(3, 4, add)
-
-
-# judge = lambda score: 'pass' if score>=80 else 'fail'
-def judge(score): return 'pass' if score >= 80 else 'fail'
-
-
 # print() usages.
 idx = 0
 fruit = 'apple'
@@ -86,51 +71,6 @@ print("golbal x = ", x)
 manipulate_global_variable_in_func()
 print("after manipulate_global_variable_in_func() = ", x)
 func()
-
-
-# Closure
-def calc():
-    a, b = 3, 5
-
-    def mul_add(x):
-        return a * x + b
-
-    return mul_add
-
-
-def calc_total():
-    a, b, total = 3, 5, 0
-
-    def mul_add(x):
-        nonlocal total
-        total = a * x + b
-        print(total, end=' ')
-
-    return mul_add
-
-
-def calc_using_lambda():
-    a, b = 3, 5
-    return lambda x: a * x + b
-
-
-c = calc()
-print("closure:", end=' ')
-for i in range(1, 11):
-    print(c(i), end=' ')
-print()
-
-c_t = calc_total()
-print("closure total:", end=' ')
-for i in range(1, 11):
-    c_t(i)
-print()
-
-c_l = calc_using_lambda()
-print("closure lambda:", end=' ')
-for i in range(1, 11):
-    print(c_l(i), end=' ')
-print()
 
 
 # Differences between 'is' and  '=='
