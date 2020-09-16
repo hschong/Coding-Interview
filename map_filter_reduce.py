@@ -28,8 +28,8 @@ dic = {key: value for key, value in enumerate(lst)}
 
 # functools.reduce()
 # using reduce to compute sum of list
-
 functools.reduce(lambda prev, cur: prev + cur, integers)
+sum_from_1_to_10 = sum(range(1, 11))
 
 # using reduce to compute maximum element from list
 functools.reduce(lambda prev, cur: prev if prev > cur else cur, integers)

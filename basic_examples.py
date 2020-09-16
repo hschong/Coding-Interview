@@ -27,8 +27,10 @@ for key, val in dic.items():  # dict
 for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
 
+for _ in range(10):
+    print('hi')
 
-sum_from_1_to_10 = sum(range(1, 11))
+_, b = range(2)
 
 
 # print() usages.
