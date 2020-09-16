@@ -96,17 +96,6 @@ functools.reduce(lambda prev, cur: prev if prev > cur else cur, integers)
 functools.reduce(lambda prev, cur: prev + cur, lang)
 
 
-# Differences between 'is' and  '=='
-# Return a shallow copy of the list.
-lst_a = [1, 2, 3]
-lst_b = lst_a[:]  # lst_a.copy(), list([1, 2, 3])
-
-if lst_a is lst_b:  # 'is' compares id(lst_a) with id(lst_b).
-    print('same id')
-
-if lst_a == lst_b:  # '==' compares value of 'lst_a' with value of 'lst_b'.
-    print('same value')
-
 # mutalbe object(list) in mutable object(list)
 lst_c = [[1, 2, 3], 'a', 'b', 'c']
 lst_d = lst_c[:]

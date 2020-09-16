@@ -27,6 +27,7 @@ for key, val in dic.items():  # dict
 for countdown in 5, 4, 3, 2, 1, 'hey!':
     print(countdown)
 
+
 sum_from_1_to_10 = sum(range(1, 11))
 
 
@@ -130,3 +131,15 @@ print("closure lambda:", end=' ')
 for i in range(1, 11):
     print(c_l(i), end=' ')
 print()
+
+
+# Differences between 'is' and  '=='
+# Return a shallow copy of the list.
+lst_a = [1, 2, 3]
+lst_b = lst_a[:]  # lst_a.copy(), list([1, 2, 3])
+
+if lst_a is lst_b:  # 'is' compares id(lst_a) with id(lst_b).
+    print('same id')
+
+if lst_a == lst_b:  # '==' compares value of 'lst_a' with value of 'lst_b'.
+    print('same value')
