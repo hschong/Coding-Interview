@@ -33,6 +33,7 @@ def calc_total():
         total = a * x + b
         print(total, end=' ')
 
+    print('local total = ', total)
     return mul_add
 
 
