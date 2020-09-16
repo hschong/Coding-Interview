@@ -1,4 +1,3 @@
-import functools
 import copy
 
 integers = [1, 2, 5, 4, 7, 3]
@@ -62,38 +61,6 @@ if 'a' not in chars:
     print("'a' is not in character")
 else:
     index = chars.index('a')
-
-
-# Using map() to convert float numbers to int numbers
-float_nums = [1.2, 2.5, 3.1, 4.0, 5.00]
-int_nums = list(map(int, float_nums))
-int_nums = list(map(lambda num: int(num), float_nums))
-int_nums_1 = [int(num) for num in float_nums]
-
-# Using List/Dictionary comprehension instead of map() or filter().
-lst = [number*2 for number in range(1, 10 + 1) if number % 2 == 1]
-dic = {key: value for key, value in enumerate(lst)}
-
-
-# filter()
-def f(x: int):
-    return True if x > 1 and x < 5 else False
-
-
-list(filter(f, integers))  # [3, 4]
-list(filter(lambda num: num > 1 and num < 5, integers))  # [3, 4]
-[num for num in integers if num > 1 and num < 5]  # [3, 4]
-
-
-# functools.reduce()
-# using reduce to compute sum of list
-functools.reduce(lambda prev, cur: prev + cur, integers)
-
-# using reduce to compute maximum element from list
-functools.reduce(lambda prev, cur: prev if prev > cur else cur, integers)
-
-# append cur string to prev string
-functools.reduce(lambda prev, cur: prev + cur, lang)
 
 
 # mutalbe object(list) in mutable object(list)
