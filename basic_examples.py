@@ -1,6 +1,7 @@
 import math
 import pprint
 import collections
+import random
 
 # Using infinity
 INFINITY = math.inf
@@ -31,6 +32,10 @@ for _ in range(10):
     print('hi')
 
 _, b = range(2)
+
+# iter(object[, sentinel])
+for num in iter(lambda: random.randrange(0, 100), 7):
+    print("random number is ", num)
 
 
 # print() usages.
