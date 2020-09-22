@@ -1,3 +1,4 @@
+from typing import List
 import random
 
 # iter(object[, sentinel])
@@ -25,5 +26,14 @@ def test_generator():
     except Exception as e:
         raise RuntimeError("exception occurred in test_divide(): ", e)
 
+
+def upper_generator(lst: List):
+    for item in lst:
+        yield item.upper()
+
+
+fruits = ['apple', 'pear', 'orange']
+for item in upper_generator(fruits):
+    print(item)
 
 test_generator()
