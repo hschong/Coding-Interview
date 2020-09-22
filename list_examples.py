@@ -1,8 +1,12 @@
+from typing import List
 import copy
+
 
 integers = [1, 2, 5, 4, 7, 3]
 chars = ['u', 'a', 'e', 'c', 'k', 'i']
-duplicates = ['a', 'b', 'a', 'c', 'c']
+# duplicates = ['a', 'b', 'a', 'c', 'c']
+duplicates = ['a', 'b', 'a', 'c', 'c', 'a', 'b', 'a', 'c', 'c', 'a',
+              'b', 'a', 'c', 'c', 'a', 'b', 'a', 'c', 'c', 1, 2, 5, 4, 7, 3, 'u', 'a', 'e', 'c', 'k', 'i', 'Korean', 'Japanese', 'Chinese', 'Spanish', 'English', 'German', 'Korean', 'Japanese', 'Chinese', 'Spanish']
 lang = ['Korean', 'Japanese', 'Chinese', 'Spanish']
 lang_tuple = ('English', 'German')
 
@@ -73,7 +77,19 @@ lst_c[0].append(4)
 
 
 # Remove duplicates from list.
-non_duplicate = list(dict.fromkeys(duplicates))
+def remove_duplicates(lst: List) -> List:
+    non_duplicate_list = []
+
+    for item in lst:
+        if item not in non_duplicate_list:
+            non_duplicate_list.append(item)
+
+    return non_duplicate_list
+
+
+# dict.fromkeys() is much faster than using for looping when there are many duplicate items.
+non_duplicate_list = list(dict.fromkeys(duplicates))
+
 
 occurrences = chars.count('a')
 lang.extend(lang_tuple)
