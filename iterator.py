@@ -3,11 +3,8 @@ import random
 
 # iterator
 it = range(10).__iter__()
-
-num = it.__next__()
-print(num)
-num = it.__next__()
-print(num)
+print(it.__next__())
+print(it.__next__())
 
 
 # iter(object[, sentinel])
