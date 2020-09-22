@@ -33,10 +33,6 @@ for _ in range(10):
 
 _, b = range(2)
 
-# iter(object[, sentinel])
-for num in iter(lambda: random.randrange(0, 100), 7):
-    print("random number is ", num)
-
 
 # print() usages.
 idx = 0
@@ -64,3 +60,13 @@ if lst_a is lst_b:  # 'is' compares id(lst_a) with id(lst_b).
 
 if lst_a == lst_b:  # '==' compares value of 'lst_a' with value of 'lst_b'.
     print('same value')
+
+
+# random
+random.randrange(1, 100, 2)  # start, stop[, step]
+random.random()  # random floating point number in the range [0.0, 1.0].
+
+# a <= N <= b is equivalent to range(a, b+1)
+random.randint(a, b)
+random.uniform(a, b)
+random.randrange(1, 101)
