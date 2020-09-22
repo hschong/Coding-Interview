@@ -67,6 +67,6 @@ random.randrange(1, 100, 2)  # start, stop[, step]
 random.random()  # random floating point number in the range [0.0, 1.0].
 
 # a <= N <= b is equivalent to range(a, b+1)
-random.randint(a, b)
-random.uniform(a, b)
+random.randint(1, 100)
+random.uniform(1.0, 100.0)
 random.randrange(1, 101)
