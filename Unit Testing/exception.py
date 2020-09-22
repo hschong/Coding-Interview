@@ -7,11 +7,14 @@ def test_divide():
 
     try:
         idx, num = input("type 2 numbers: ").split()
-        if False == isinstance(idx, int):
-            raise NotIntegerError("typed none integer for idx")
+        idx = int(idx)
+        num = int(num)
 
-        if False == isinstance(num, int):
-            raise NotIntegerError("typed none integer for num")
+        # if False == isinstance(idx, int):
+        #     raise NotIntegerError("typed none integer for idx")
+
+        # if False == isinstance(num, int):
+        #     raise NotIntegerError("typed none integer for num")
 
         result = integers[idx] / num
 
