@@ -77,17 +77,17 @@ lst_c[0].append(4)
 
 
 # Remove duplicates from list.
-def remove_duplicates(lst: List) -> List:
+def remove_duplicates(lst: List) -> List:  # O(n²)
     non_duplicate_list = []
 
-    for item in lst:
-        if item not in non_duplicate_list:
+    for item in lst:  # O(n)
+        if item not in non_duplicate_list:  # O(n)
             non_duplicate_list.append(item)
 
     return non_duplicate_list
 
 
-# dict.fromkeys() is much faster than using for looping when there are many duplicate items.
+# dict.fromkeys() is much faster than using for looping. O(n) x O(1)
 non_duplicate_list = list(dict.fromkeys(duplicates))
 
 
