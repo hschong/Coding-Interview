@@ -37,7 +37,7 @@ for item in test_generator():
     print(item)
 
 
-def is_prime_number(number):
+def is_prime_number(number: int, primes: List) -> bool:
     try:
         if not isinstance(number, int):
             raise Exception("not number")
@@ -48,18 +48,15 @@ def is_prime_number(number):
     else:
         if number < 2:
             return False
-        elif number == 2 or number == 3:
-            return True
 
-        # remove even numbers and multiplication of 3
-        if number % 2 == 0 or number % 3 == 0:
-            return False
+        for prime in primes:
+            if number % prime == 0:
+                return False
 
-        for i in range(5, number, 2):
-            if i % 3 == 0:
-                continue
-
+        for i in range(11, number, 2):
             if number % i == 0:
+                if i not in primes:
+                    primes.append(i)
                 return False
 
         return True
@@ -79,8 +76,10 @@ def generate_prime_numbers(a, b):
         raise RuntimeError(e)
 
     else:
+        prime_numbers = [2, 3, 5, 7]
         for i in range(a, b+1):
-            if is_prime_number(i) == True:
+            if is_prime_number(i, prime_numbers) == True:
+                prime_numbers.append(i)
                 yield i
 
 
