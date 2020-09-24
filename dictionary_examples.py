@@ -1,9 +1,11 @@
 import collections
 
+dic = dict(x=10, y=11)  # {'x': 10, 'y': 11}
 dic = dict()
 dic['a'] = 1
 dic['b'] = 2
 dic.setdefault('c', 3)
+
 dic.pop('a')
 k, v = dic.popitem()  # Changed in version 3.7: LIFO order is now guaranteed
 
