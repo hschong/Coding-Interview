@@ -15,13 +15,15 @@ def generate_nums(stop):
         num += 1
 
 
-def test_generator():
-    try:
-        yield from generate_nums(3)
-        # x = next(it)
+def three_generator():
+    yield from generate_nums(3)
 
-    except Exception as e:
-        raise RuntimeError("exception occurred in test_divide(): ", e)
+
+for item in generate_nums(3):  # simple
+    print(item)
+
+for item in three_generator():
+    print(item)
 
 
 def upper_generator(lst: List):
@@ -31,9 +33,6 @@ def upper_generator(lst: List):
 
 fruits = ['apple', 'pear', 'orange']
 for item in upper_generator(fruits):
-    print(item)
-
-for item in test_generator():
     print(item)
 
 
