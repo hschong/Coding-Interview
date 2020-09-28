@@ -53,7 +53,7 @@ say_hello_using_decorator()
 say_world_using_decorator()
 
 
-# handling parameters and return value in decorator
+# passing arguments and returning return value in decorator
 def print_add(func):
     def wrapper(a, b):
         result = func(a, b)
@@ -68,3 +68,26 @@ def add(a, b):
 
 
 print(add(3, 4))
+
+
+# variadic arguments
+def print_arguments(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print(f'func = {func.__name__}, *args: {args}, **kwargs: {kwargs}')
+        return result
+    return wrapper
+
+
+@print_arguments
+def get_max(*args):
+    return max(args)
+
+
+@print_arguments
+def get_min(**kwargs):
+    return min(kwargs.values())
+
+
+print(get_max(10, 20))
+print(get_min(x=10, y=20, z=5))
