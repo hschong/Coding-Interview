@@ -51,3 +51,20 @@ def say_world_using_decorator():
 
 say_hello_using_decorator()
 say_world_using_decorator()
+
+
+# handling parameters and return value in decorator
+def print_add(func):
+    def wrapper(a, b):
+        result = func(a, b)
+        print(f'func = {func.__name__}, a = {a}, b = {b}, result = {result}')
+        return result
+    return wrapper
+
+
+@print_add
+def add(a, b):
+    return a+b
+
+
+print(add(3, 4))
